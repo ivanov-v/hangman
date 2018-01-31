@@ -4,7 +4,7 @@
   "description": "hangman game",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack-dev-server & webpack --watch",
     "build": "webpack -p"
   },
   "author": "ivanov-v",
@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
   }
 }
