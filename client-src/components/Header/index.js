@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-export class Header extends React.PureComponent {
+export class Header extends React.Component {
     render() {
         return (
             <header>

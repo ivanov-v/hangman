@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-export class Letter extends React.PureComponent {
+export class Letter extends React.Component {
     static defaultProps = {
         onClick: () => {},
     };
