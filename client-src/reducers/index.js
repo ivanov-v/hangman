@@ -3,9 +3,15 @@ import {CHECK_LETTER} from '../actions';
 export const reducer = (state, {type, payload}) => {
     switch (type) {
         case CHECK_LETTER:
-            return Object.assign({}, state, {
-                activeLetters: state.activeLetters.concat(payload.index)
-            });
+            return {
+                alphabet: state.alphabet.map(letterState => {
+                    if (letterState.value === payload.letter) {
+                        return Object.assign({}, letterState, {active: true});
+                    }
+
+                    return letterState;
+                })
+            };
         default:
             return state;
     }

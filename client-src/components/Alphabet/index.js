@@ -12,13 +12,14 @@ export class Alphabet extends React.PureComponent {
 
         return (
             <ul>
-                {alphabet.map((letter) =>
-                    <li key={letter}>
+                {alphabet.map(({value, active}) =>
+                    <li key={value}>
                         <Letter
                             onClick={onClick}
-                            data={letter}
+                            isActive={active}
+                            data={value}
                         >
-                            {letter}
+                            {value}
                         </Letter>
                     </li>
                 )}

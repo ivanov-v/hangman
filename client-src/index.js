@@ -14,9 +14,11 @@ const alphabet = [
     'э', 'ю', 'я'
 ];
 
+const createAlphabetState = alphabet =>
+    alphabet.map(letter => ({ active: false, value: letter }));
+
 const state = {
-    alphabet,
-    activeLetters: []
+    alphabet: createAlphabetState(alphabet)
 };
 
 const store = createStore(reducer, state);

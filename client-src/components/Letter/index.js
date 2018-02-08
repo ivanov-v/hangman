@@ -13,12 +13,16 @@ export class Letter extends React.Component {
     };
 
     render() {
-        const {
-            children,
-        } = this.props;
+        const {children, isActive} = this.props;
 
         return (
-            <button type='button' onClick={this.handleClick}>{children}</button>
+            <button
+                className={isActive ? 'active' : ''}
+                type='button'
+                onClick={this.handleClick}
+            >
+                {children}
+            </button>
         );
     }
 };
