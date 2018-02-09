@@ -3,11 +3,17 @@ const issues = require('./issues');
 
 const app = express();
 
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+});
+
 app.get('/api/issue', (req, res) => {
     const randomIssue = issues.getRandomIssue();
 
     res.json({
-        data: randomIssue
+        randomIssue
     });
 });
 
@@ -18,9 +24,7 @@ app.get('/api/letters', (req, res) => {
     const positions = issues.getLettersPosition(issueId, letter);
 
     res.json({
-        data: {
-            positions
-        }
+        positions
     });
 });
 

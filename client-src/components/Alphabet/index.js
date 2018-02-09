@@ -7,19 +7,23 @@ export class Alphabet extends React.PureComponent {
     render() {
         const {
             alphabet,
+            issueId,
             onClick
         } = this.props;
 
         return (
             <ul>
-                {alphabet.map(({value, active}) =>
-                    <li key={value}>
+                {alphabet.map(({letter, active}) =>
+                    <li key={letter}>
                         <Letter
                             onClick={onClick}
                             isActive={active}
-                            data={value}
+                            data={({
+                                issueId,
+                                letter
+                            })}
                         >
-                            {value}
+                            {letter}
                         </Letter>
                     </li>
                 )}

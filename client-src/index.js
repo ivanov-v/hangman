@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore} from 'redux';
+import {createStore, applyMiddleware} from 'redux';
+import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
+
 import {App} from './components/App';
 import {reducer} from './reducers';
+import {getInitialIssue} from './actions'
 
 const alphabet = [
     'а', 'б', 'в', 'г', 'д', 'е',
@@ -15,21 +18,28 @@ const alphabet = [
 ];
 
 const createAlphabetState = alphabet =>
-    alphabet.map(letter => ({ active: false, value: letter }));
+    alphabet.map(letter => ({ active: false, letter }));
 
 const state = {
     alphabet: createAlphabetState(alphabet)
 };
 
-const store = createStore(reducer, state);
-const rootElem = document.getElementById('root');
+const store = createStore(
+    reducer,
+    state,
+    applyMiddleware(thunk)
+);
+
 store.subscribe(() => {
     console.log(store.getState());
 });
+
+store.dispatch(getInitialIssue());
+
 const main = (
     <Provider store={store}>
         <App />
     </Provider>
 );
 
-ReactDOM.render(main, rootElem);
+ReactDOM.render(main, document.getElementById('root'));
