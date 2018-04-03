@@ -6,23 +6,17 @@ export class Letter extends React.Component {
         onClick: () => {},
     };
 
-    handleClick = () => {
-        const {data, onClick} = this.props;
-
-        onClick(data);
-    };
-
     render() {
-        const {children, isActive} = this.props;
+        const {children, isActive, onClick} = this.props;
 
         return (
             <button
                 className={isActive ? 'active' : ''}
                 type='button'
-                onClick={this.handleClick}
+                onClick={onClick}
             >
                 {children}
             </button>
         );
     }
-};
+}

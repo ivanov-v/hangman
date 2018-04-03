@@ -8,7 +8,7 @@ import {Alphabet} from '../../components/Alphabet';
 const mapStateToProps = state => {
     return {
         alphabet: state.alphabet,
-        issueId: 1
+        issueId: state.issue.issueId,
     };
 };
 

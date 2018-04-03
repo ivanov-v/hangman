@@ -24,14 +24,14 @@ const getRandomIssue = () => {
 
     return {
         issueId: randomIssue.id,
-        issue: randomIssue.issue,
+        text: randomIssue.issue,
         answerLength
     };
 };
 
 const getLettersPosition = (issueId, acceptedLetter) => {
     const issue = issues.find(issue => issue.id === issueId);
-
+    console.log(issue);
     return issue.answer
         .split('')
         .reduce((acc, letter, index) => {

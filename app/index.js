@@ -20,10 +20,10 @@ app.get('/api/issue', (req, res) => {
 app.get('/api/letters', (req, res) => {
     const issueId = parseInt(req.query.issueId, 10);
     const letter = req.query.letter;
-
     const positions = issues.getLettersPosition(issueId, letter);
 
     res.json({
+        letter,
         positions
     });
 });

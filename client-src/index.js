@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import {createStore, applyMiddleware} from 'redux';
-import thunk from 'redux-thunk';
 import {Provider} from 'react-redux';
+import thunk from 'redux-thunk';
 
 import {App} from './components/App';
 import {reducer} from './reducers';
@@ -21,6 +21,7 @@ const createAlphabetState = alphabet =>
     alphabet.map(letter => ({ active: false, letter }));
 
 const state = {
+    issue: {},
     alphabet: createAlphabetState(alphabet)
 };
 
@@ -30,16 +31,13 @@ const store = createStore(
     applyMiddleware(thunk)
 );
 
-store.subscribe(() => {
-    console.log(store.getState());
-});
+store.subscribe(() => console.log(store.getState()));
 
 store.dispatch(getInitialIssue());
 
-const main = (
+ReactDOM.render(
     <Provider store={store}>
         <App />
-    </Provider>
+    </Provider>,
+    document.getElementById('root')
 );
-
-ReactDOM.render(main, document.getElementById('root'));
