@@ -31,6 +31,6 @@ export class Alphabet extends React.PureComponent {
             alphabet,
         } = this.props;
 
-        return <ul>{alphabet.map(this.renderLetter)}</ul>;
+        return <ul className='alphabet'>{alphabet.map(this.renderLetter)}</ul>;
     }
 }

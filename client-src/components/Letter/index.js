@@ -14,6 +14,7 @@ export class Letter extends React.Component {
                 className={isActive ? 'active' : ''}
                 type='button'
                 onClick={onClick}
+                disabled={isActive}
             >
                 {children}
             </button>
