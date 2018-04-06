@@ -1,7 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import styled from 'styled-components';
 
 import {Letter} from '../Letter';
+
+const List = styled.ul`
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 12px;
+    padding-bottom: 20px;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    border-radius: 4px;
+    border: 1px solid #000;
+    box-shadow: inset 0 -3px #000;
+`;
+
+const Item = styled.li`
+    display: block;
+    padding: 5px;
+    transition: transform 0.2s;
+`;
 
 export class Alphabet extends React.PureComponent {
     handleClick = letter => () => {
@@ -15,14 +36,14 @@ export class Alphabet extends React.PureComponent {
 
     renderLetter = ({letter, active}) => {
         return (
-            <li key={letter}>
+            <Item key={letter}>
                 <Letter
                     isActive={active}
                     onClick={this.handleClick(letter)}
                 >
                     {letter}
                 </Letter>
-            </li>
+            </Item>
         );
     };
 
@@ -31,6 +52,6 @@ export class Alphabet extends React.PureComponent {
             alphabet,
         } = this.props;
 
-        return <ul className='alphabet'>{alphabet.map(this.renderLetter)}</ul>;
+        return <List>{alphabet.map(this.renderLetter)}</List>;
     }
 }

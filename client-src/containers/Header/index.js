@@ -23,7 +23,7 @@ const getLetter = (state, index) => {
 const getWord = state =>
     [...Array(state.issue.answerLength)]
         .map((item, index) => getLetter(state, index) || '_')
-        .join(' ');
+        .join('');
 
 const mapStateToProps = state => {
     return {

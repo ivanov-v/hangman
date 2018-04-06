@@ -1,5 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import styled from 'styled-components';
+
+const Title = styled.div`
+    text-align: center;
+    font-weight: 700;
+    font-size: 30px;
+`;
+
+const Word = styled.div`
+    font-size: 30px;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+`;
 
 export class HeaderRaw extends React.Component {
     render() {
@@ -7,8 +22,8 @@ export class HeaderRaw extends React.Component {
 
         return (
             <header>
-                <h1>{text}</h1>
-                <h2>{word}</h2>
+                <Title>{text}</Title>
+                <Word>{word}</Word>
                 <h3>Жизни: {lives}</h3>
             </header>
         );
