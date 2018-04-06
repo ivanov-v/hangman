@@ -53,6 +53,8 @@ export const newGame = () => dispatch => {
 };
 
 export const checkAndUpdateAnswer = ({issueId, letter}) => (dispatch, getState) => {
+    dispatch(checkLetter(letter));
+
     return axios.get(`http://localhost:3000/api/letters?issueId=${issueId}&letter=${letter}`)
         .then(response => response.data)
         .then(letterState => {
@@ -61,13 +63,10 @@ export const checkAndUpdateAnswer = ({issueId, letter}) => (dispatch, getState) 
 
                 if (getState().lives === 0) {
                     dispatch(newGame());
-
-                    return;
                 }
+            } else {
+                dispatch(setLetter(letterState));
             }
-
-            dispatch(setLetter(letterState));
-            dispatch(checkLetter(letter));
         })
         .catch(error => {
             console.log(error);
