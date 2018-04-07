@@ -22,7 +22,7 @@ export class HeaderRaw extends React.Component {
 
         return (
             <header>
-                <Title>{text}</Title>
+                <Title>Категория: {text}</Title>
                 <Word>{word}</Word>
                 <h3>Жизни: {lives}</h3>
             </header>

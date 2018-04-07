@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import {Header} from '../../containers/Header';
 import {AlphabetContainer} from '../../containers/AlphabetContainer';
+import {Gallows} from '../Gallows';
 
 const Inner = styled.div`
     display: block;
@@ -15,6 +16,7 @@ export class App extends React.PureComponent {
         return (
             <Inner>
                 <Header />
+                {/*<Gallows />*/}
                 <AlphabetContainer />
             </Inner>
         );

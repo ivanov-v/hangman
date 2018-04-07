@@ -43,7 +43,11 @@ export const resetState = () => ({
 export const getInitialIssue = () => dispatch => {
     return axios.get('http://localhost:3000/api/issue')
         .then(response => response.data.randomIssue)
-        .then(randomIssue => dispatch(setIssue(randomIssue)))
+        .then(randomIssue => {
+            dispatch(setIssue(randomIssue.issue));
+            dispatch(checkLetter(randomIssue.letter.letter));
+            dispatch(setLetter(randomIssue.letter));
+        })
         .catch(error => alert(error));
 };
 
