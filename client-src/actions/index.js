@@ -56,6 +56,20 @@ export const newGame = () => dispatch => {
     dispatch(getInitialIssue());
 };
 
+const getLettersCount = (state) => {
+    return Object.keys(state.letters).reduce((acc, letter) => {
+        return state.letters[letter].length + acc;
+    }, 0);
+};
+
+const isWin = (state) => {
+    return getLettersCount(state) === state.issue.answerLength;
+};
+
+const isGameOver = (state) => {
+    return state.lives === 0;
+};
+
 export const checkAndUpdateAnswer = ({issueId, letter}) => (dispatch, getState) => {
     dispatch(checkLetter(letter));
 
@@ -65,11 +79,15 @@ export const checkAndUpdateAnswer = ({issueId, letter}) => (dispatch, getState) 
             if (letterState.positions.length === 0) {
                 dispatch(die());
 
-                if (getState().lives === 0) {
-                    dispatch(newGame());
+                if (isGameOver(getState())) {
+                    setTimeout(() => dispatch(newGame()), 1000);
                 }
             } else {
                 dispatch(setLetter(letterState));
+
+                if (isWin(getState())) {
+                    setTimeout(() => dispatch(newGame()), 1000);
+                }
             }
         })
         .catch(error => {
