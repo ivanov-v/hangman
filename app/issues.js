@@ -18,6 +18,16 @@ const issues = [
         id: 4,
         issue: 'животные',
         answer: 'кошка'
+    },
+    {
+        id: 5,
+        issue: 'животные',
+        answer: 'гамадрил'
+    },
+    {
+        id: 6,
+        issue: 'животные',
+        answer: 'сколопендра'
     }
 ];
 

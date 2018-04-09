@@ -30,7 +30,7 @@ const alphabet = (state = initialAlphabet, {type, payload}) => {
     }
 };
 
-const lives = (state = 3, {type}) => {
+const lives = (state = 4, {type}) => {
     switch (type) {
         case DIE:
             return --state;

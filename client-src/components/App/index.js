@@ -16,7 +16,7 @@ export class App extends React.PureComponent {
         return (
             <Inner>
                 <Header />
-                {/*<Gallows />*/}
+                <Gallows />
                 <AlphabetContainer />
             </Inner>
         );

@@ -29,7 +29,6 @@ const mapStateToProps = state => {
     return {
         text: state.issue.text,
         word: getWord(state),
-        lives: state.lives,
     };
 };
 

@@ -24,7 +24,6 @@ export class HeaderRaw extends React.Component {
             <header>
                 <Title>Категория: {text}</Title>
                 <Word>{word}</Word>
-                <h3>Жизни: {lives}</h3>
             </header>
         );
     }
