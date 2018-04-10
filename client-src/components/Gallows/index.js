@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-import {HeaderRaw} from '../HeaderRaw';
 import {connect} from 'react-redux';
+import {getLives} from '../../selectors';
 
 const Svg = styled.svg`
     display: block;
@@ -49,15 +49,12 @@ export class GallowsSvg extends React.Component {
                     </g>
                 </g>
             </Svg>
-
         );
     }
 }
 
-const mapStateToProps = state => {
-    return {
-        lives: state.lives,
-    };
-};
+const mapStateToProps = state => ({
+    lives: getLives(state),
+});
 
 export const Gallows = connect(mapStateToProps)(GallowsSvg);

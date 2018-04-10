@@ -3,11 +3,15 @@ import {connect} from 'react-redux';
 
 import {checkAndUpdateAnswer} from '../../actions';
 import {Alphabet} from '../../components/Alphabet';
+import {
+    getAlphabet,
+    getIssueId,
+} from '../../selectors';
 
 const mapStateToProps = state => {
     return {
-        alphabet: state.alphabet,
-        issueId: state.issue.issueId,
+        alphabet: getAlphabet(state),
+        issueId: getIssueId(state),
     };
 };
 

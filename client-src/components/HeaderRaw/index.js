@@ -18,7 +18,10 @@ const Word = styled.div`
 
 export class HeaderRaw extends React.Component {
     render() {
-        const {text, word, lives} = this.props;
+        const {
+            text,
+            word,
+        } = this.props;
 
         return (
             <header>

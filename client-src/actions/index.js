@@ -1,10 +1,13 @@
 import axios from 'axios';
+import {
+    isWin,
+    isGameOver,
+} from '../selectors';
 
 export const CHECK_LETTER = 'CHECK_LETTER';
 export const RESET_STATE = 'RESET_STATE';
 export const SET_LETTER = 'SET_LETTER';
 export const SET_ISSUE = 'SET_ISSUE';
-export const NEW_GAME = 'NEW_GAME';
 export const DIE = 'DIE';
 
 export const checkLetter = letter => ({
@@ -23,10 +26,6 @@ export const setIssue = issue => ({
 
 export const die = () => ({
     type: DIE
-});
-
-export const loadingComplete = () => ({
-    type: LOADING_COMPLETE
 });
 
 export const setLetter = letter => ({
@@ -54,20 +53,6 @@ export const getInitialIssue = () => dispatch => {
 export const newGame = () => dispatch => {
     dispatch(resetState());
     dispatch(getInitialIssue());
-};
-
-const getLettersCount = (state) => {
-    return Object.keys(state.letters).reduce((acc, letter) => {
-        return state.letters[letter].length + acc;
-    }, 0);
-};
-
-const isWin = (state) => {
-    return getLettersCount(state) === state.issue.answerLength;
-};
-
-const isGameOver = (state) => {
-    return state.lives === 0;
 };
 
 export const checkAndUpdateAnswer = ({issueId, letter}) => (dispatch, getState) => {
