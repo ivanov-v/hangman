@@ -14,8 +14,6 @@ const store = createStore(
     composeEnhancers(applyMiddleware(thunk))
 );
 
-store.subscribe(() => console.log(store.getState()));
-
 store.dispatch(getInitialIssue());
 
 ReactDOM.render(

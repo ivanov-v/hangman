@@ -8,7 +8,9 @@ export const CHECK_LETTER = 'CHECK_LETTER';
 export const RESET_STATE = 'RESET_STATE';
 export const SET_LETTER = 'SET_LETTER';
 export const SET_ISSUE = 'SET_ISSUE';
+export const PAUSE = 'PAUSE';
 export const DIE = 'DIE';
+export const PLAY = 'PLAY';
 
 export const checkLetter = letter => ({
     type: CHECK_LETTER,
@@ -37,6 +39,14 @@ export const setLetter = letter => ({
 
 export const resetState = () => ({
     type: RESET_STATE
+});
+
+export const pause = () => ({
+    type: PAUSE
+});
+
+export const play = () => ({
+    type: PLAY
 });
 
 export const getInitialIssue = () => dispatch => {

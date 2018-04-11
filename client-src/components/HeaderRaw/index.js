@@ -21,12 +21,14 @@ export class HeaderRaw extends React.Component {
         const {
             text,
             word,
+            onClick,
         } = this.props;
 
         return (
             <header>
                 <Title>Категория: {text}</Title>
                 <Word>{word}</Word>
+                <button onClick={onClick} type='button'>| |</button>
             </header>
         );
     }

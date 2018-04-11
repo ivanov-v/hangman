@@ -1,10 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-
-import {Header} from '../../containers/Header';
-import {AlphabetContainer} from '../../containers/AlphabetContainer';
-import {Gallows} from '../Gallows';
+import {Pager} from '../../containers/Pager';
 
 const Inner = styled.div`
     display: block;
@@ -15,9 +12,7 @@ export class App extends React.PureComponent {
     render() {
         return (
             <Inner>
-                <Header />
-                <Gallows />
-                <AlphabetContainer />
+                <Pager />
             </Inner>
         );
     }

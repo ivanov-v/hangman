@@ -1,5 +1,5 @@
 import {combineReducers} from 'redux';
-import {CHECK_LETTER, SET_ISSUE, DIE, SET_LETTER, RESET_STATE} from '../actions';
+import {CHECK_LETTER, SET_ISSUE, DIE, SET_LETTER, RESET_STATE, PLAY, PAUSE} from '../actions';
 
 const alphabetMap = [
     'а', 'б', 'в', 'г', 'д', 'е',
@@ -64,11 +64,23 @@ const letters = (state = {}, {type, payload}) => {
     }
 };
 
+const route = (state = 'game', {type}) => {
+    switch (type) {
+        case PLAY:
+            return 'game';
+        case PAUSE:
+            return 'pause';
+        default:
+            return state;
+    }
+};
+
 export const reducer = combineReducers({
     alphabet,
     lives,
     issue,
     letters,
+    route,
 });
 
 export const rootReducer = (state, action) => {

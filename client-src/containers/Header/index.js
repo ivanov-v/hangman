@@ -7,10 +7,15 @@ import {
     getIssue,
 } from '../../selectors';
 import {HeaderRaw} from '../../components/HeaderRaw';
+import {pause} from '../../actions';
 
 const mapStateToProps = state => ({
     text: getIssue(state),
     word: getWord(state),
 });
 
-export const Header = connect(mapStateToProps)(HeaderRaw);
+const mapDispatchToProps = dispatch => ({
+    onClick: () => dispatch(pause())
+});
+
+export const Header = connect(mapStateToProps, mapDispatchToProps)(HeaderRaw);
