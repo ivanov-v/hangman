@@ -1,6 +1,6 @@
 import {combineReducers} from 'redux';
-import {CHECK_LETTER, SET_ISSUE, DIE, SET_LETTER, RESET_STATE, CHANGE_PAGE} from '../actions';
-import {ROUTES} from '../routes';
+import {CHECK_LETTER, SET_ISSUE, DIE, SET_LETTER, RESET_STATE, CHANGE_PAGE} from '~/actions';
+import {ROUTES} from '~/routes';
 
 const alphabetMap = [
     'й', 'ц', 'у', 'к', 'е', 'н',

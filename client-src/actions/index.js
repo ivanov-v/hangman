@@ -2,7 +2,7 @@ import axios from 'axios';
 import {
     isWin,
     isGameOver,
-} from '../selectors';
+} from '~/selectors';
 
 export const CHECK_LETTER = 'CHECK_LETTER';
 export const RESET_STATE = 'RESET_STATE';

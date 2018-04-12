@@ -2,9 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 
-import {changePage} from '../../actions';
-import {ROUTES} from '../../routes';
-import {PausePageRaw} from '../../components/PausePageRaw';
+import {changePage} from '~/actions';
+import {ROUTES} from '~/routes';
+import {PausePageRaw} from '~/components/PausePageRaw';
 
 const mapDispatchToProps = dispatch => ({
     onPlay() {

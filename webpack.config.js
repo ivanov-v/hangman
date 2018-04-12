@@ -6,6 +6,11 @@ module.exports = {
         path: resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
+    resolve: {
+        alias: {
+            '~': resolve(__dirname, './client-src'),
+        }
+    },
     module: {
         rules: [
             {

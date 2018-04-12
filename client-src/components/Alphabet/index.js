@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
-import {Letter} from '../Letter';
+import {Letter} from '~/components/Letter';
 
 const List = styled.ul`
     max-width: 660px;
