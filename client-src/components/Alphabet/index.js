@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import {Letter} from '../Letter';
 
 const List = styled.ul`
-    max-width: 500px;
+    max-width: 660px;
     margin: 0 auto;
     padding: 12px;
     padding-bottom: 20px;

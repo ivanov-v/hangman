@@ -7,7 +7,8 @@ import {
     getIssue,
 } from '../../selectors';
 import {HeaderRaw} from '../../components/HeaderRaw';
-import {pause} from '../../actions';
+import {changePage} from '../../actions';
+import {ROUTES} from '../../routes';
 
 const mapStateToProps = state => ({
     text: getIssue(state),
@@ -15,7 +16,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    onClick: () => dispatch(pause())
+    onClick: () => dispatch(changePage(ROUTES.PAUSE))
 });
 
 export const Header = connect(mapStateToProps, mapDispatchToProps)(HeaderRaw);

@@ -1,13 +1,14 @@
 import {combineReducers} from 'redux';
-import {CHECK_LETTER, SET_ISSUE, DIE, SET_LETTER, RESET_STATE, PLAY, PAUSE} from '../actions';
+import {CHECK_LETTER, SET_ISSUE, DIE, SET_LETTER, RESET_STATE, CHANGE_PAGE} from '../actions';
+import {ROUTES} from '../routes';
 
 const alphabetMap = [
-    'а', 'б', 'в', 'г', 'д', 'е',
-    'ё', 'ж', 'з', 'и', 'й', 'к',
-    'л', 'м', 'н', 'о', 'п', 'р',
-    'с', 'т', 'у', 'ф', 'х', 'ц',
-    'ч', 'ш', 'щ', 'ъ', 'ы', 'ь',
-    'э', 'ю', 'я'
+    'й', 'ц', 'у', 'к', 'е', 'н',
+    'г', 'ш', 'щ', 'з', 'х', 'ъ',
+    'ф', 'ы', 'в', 'а', 'п', 'р',
+    'о', 'л', 'д', 'ж', 'э', 'ё',
+    'я', 'ч', 'с', 'м', 'и', 'т',
+    'ь', 'б', 'ю'
 ];
 
 const createAlphabetState = alphabet =>
@@ -64,15 +65,12 @@ const letters = (state = {}, {type, payload}) => {
     }
 };
 
-const route = (state = 'game', {type}) => {
-    switch (type) {
-        case PLAY:
-            return 'game';
-        case PAUSE:
-            return 'pause';
-        default:
-            return state;
+const route = (state = ROUTES.GAME, {type, payload}) => {
+    if (type === CHANGE_PAGE) {
+        return payload.pageId;
     }
+
+    return state;
 };
 
 export const reducer = combineReducers({

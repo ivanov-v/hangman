@@ -5,8 +5,9 @@ import {connect} from 'react-redux';
 import {Header} from '../Header';
 import {AlphabetContainer} from '../AlphabetContainer';
 import {Gallows} from '../../components/Gallows';
-import {play} from '../../actions';
+import {changePage} from '../../actions';
 import {getRoute} from '../../selectors';
+import {ROUTES} from '../../routes';
 
 const mapStateToProps = state => ({
     route: getRoute(state),
@@ -14,7 +15,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     onClick() {
-        dispatch(play())
+        dispatch(changePage(ROUTES.GAME))
     }
 });
 
@@ -23,7 +24,7 @@ class PagerRaw extends React.Component {
         const {route, onClick} = this.props;
 
         switch (route) {
-            case 'game':
+            case ROUTES.GAME:
                 return (
                     <Fragment>
                         <Header />
@@ -32,7 +33,7 @@ class PagerRaw extends React.Component {
                     </Fragment>
                 );
 
-            case 'pause':
+            case ROUTES.PAUSE:
                 return <button onClick={onClick} type='button'>play</button>;
         }
     }
