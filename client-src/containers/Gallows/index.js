@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 import {connect} from 'react-redux';
-import {getLives} from '../../selectors';
+import {getLives} from '../../selectors/index';
 
 const Svg = styled.svg`
     display: block;

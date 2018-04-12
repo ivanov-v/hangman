@@ -65,7 +65,7 @@ const letters = (state = {}, {type, payload}) => {
     }
 };
 
-const route = (state = ROUTES.GAME, {type, payload}) => {
+const route = (state = ROUTES.HOME, {type, payload}) => {
     if (type === CHANGE_PAGE) {
         return payload.pageId;
     }

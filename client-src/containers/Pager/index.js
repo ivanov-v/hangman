@@ -1,13 +1,14 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 
-import {Header} from '../Header';
-import {AlphabetContainer} from '../AlphabetContainer';
-import {Gallows} from '../../components/Gallows';
 import {changePage} from '../../actions';
 import {getRoute} from '../../selectors';
 import {ROUTES} from '../../routes';
+import {GamePage} from '../../components/GamePage';
+import {HomePage} from '../HomePage';
+import {PausePage} from '../PausePage';
+
 
 const mapStateToProps = state => ({
     route: getRoute(state),
@@ -24,17 +25,14 @@ class PagerRaw extends React.Component {
         const {route, onClick} = this.props;
 
         switch (route) {
+            case ROUTES.HOME:
+                return <HomePage />;
+
             case ROUTES.GAME:
-                return (
-                    <Fragment>
-                        <Header />
-                        <Gallows />
-                        <AlphabetContainer />
-                    </Fragment>
-                );
+                return <GamePage />;
 
             case ROUTES.PAUSE:
-                return <button onClick={onClick} type='button'>play</button>;
+                return <PausePage />;
         }
     }
 }
