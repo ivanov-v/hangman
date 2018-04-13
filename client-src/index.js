@@ -9,10 +9,7 @@ import {rootReducer} from './reducers';
 import {getInitialIssue} from './actions';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const store = createStore(
-    rootReducer,
-    composeEnhancers(applyMiddleware(thunk))
-);
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
 store.dispatch(getInitialIssue());
 

@@ -9,6 +9,7 @@ import {
 } from '~/actions';
 import {ROUTES} from '~/routes';
 
+// prettier-ignore
 const alphabetMap = [
     'й', 'ц', 'у', 'к', 'е', 'н',
     'г', 'ш', 'щ', 'з', 'х', 'ъ',
@@ -18,8 +19,7 @@ const alphabetMap = [
     'ь', 'б', 'ю'
 ];
 
-const createAlphabetState = alphabet =>
-    alphabet.map(letter => ({active: false, letter}));
+const createAlphabetState = alphabet => alphabet.map(letter => ({active: false, letter}));
 
 const initialAlphabet = createAlphabetState(alphabetMap);
 

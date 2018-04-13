@@ -14,22 +14,14 @@ export class GallowsSvg extends React.Component {
         const {lives} = this.props;
 
         return (
-            <Svg
-                width="150"
-                viewBox="0 0 380 512"
-                xmlns="http://www.w3.org/2000/svg"
-            >
+            <Svg width="150" viewBox="0 0 380 512" xmlns="http://www.w3.org/2000/svg">
                 <g fill="none" fillRule="evenodd">
                     <path
                         d="M374.874 49.908H186.337c-4.081 0-7.639 3.145-7.761 7.224a7.452 7.452 0 0 0 7.449 7.68h178.913v37.258H15.06V64.813h118.015c4.081 0 7.639-3.145 7.761-7.224a7.452 7.452 0 0 0-7.449-7.68h-29.878V4.968A4.968 4.968 0 0 0 98.541 0H41.41a4.968 4.968 0 0 0-4.968 4.968v44.94H5.124a4.968 4.968 0 0 0-4.968 4.968v57.131a4.968 4.968 0 0 0 4.968 4.968h31.318v390.056a4.968 4.968 0 0 0 4.968 4.968h57.131a4.968 4.968 0 0 0 4.968-4.968V294.567c0-4.08-3.144-7.639-7.223-7.761a7.452 7.452 0 0 0-7.682 7.449v202.841H51.346v-380.12h37.258v123.808c0 4.08 3.144 7.639 7.223 7.761a7.452 7.452 0 0 0 7.682-7.449v-124.12l190.324.002h81.041a4.968 4.968 0 0 0 4.968-4.968V54.877a4.969 4.969 0 0 0-4.968-4.969zM51.347 14.904h37.258v35.004H51.347V14.904z"
                         fill="#000"
                         fillRule="nonzero"
                     />
-                    <g
-                        transform="translate(208 116)"
-                        stroke="#000"
-                        strokeWidth="15"
-                    >
+                    <g transform="translate(208 116)" stroke="#000" strokeWidth="15">
                         {lives < 4 && (
                             <ellipse
                                 transform="rotate(42 61.297 80.706)"
@@ -58,10 +50,7 @@ export class GallowsSvg extends React.Component {
                         //правая нога
                         }
                         {lives < 1 && (
-                            <path
-                                d="M58.5 255.5l-50 83"
-                                strokeLinecap="square"
-                            />
+                            <path d="M58.5 255.5l-50 83" strokeLinecap="square" />
                         )
                         //левая нога
                         }
@@ -81,9 +70,7 @@ export class GallowsSvg extends React.Component {
                         )
                         //левая рука
                         }
-                        {lives < 4 && (
-                            <path d="M54.5.5v39" strokeLinecap="square" />
-                        )
+                        {lives < 4 && <path d="M54.5.5v39" strokeLinecap="square" />
                         //веревка
                         }
                     </g>
