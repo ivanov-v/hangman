@@ -8,7 +8,9 @@ export class HomePageRaw extends React.Component {
         return (
             <div>
                 <h1>Виселица</h1>
-                <button type='button' onClick={onPlay}>Начать игру</button>
+                <button type="button" onClick={onPlay}>
+                    Начать игру
+                </button>
             </div>
         );
     }

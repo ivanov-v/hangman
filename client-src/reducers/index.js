@@ -1,5 +1,12 @@
 import {combineReducers} from 'redux';
-import {CHECK_LETTER, SET_ISSUE, DIE, SET_LETTER, RESET_STATE, CHANGE_PAGE} from '~/actions';
+import {
+    CHECK_LETTER,
+    SET_ISSUE,
+    DIE,
+    SET_LETTER,
+    RESET_STATE,
+    CHANGE_PAGE,
+} from '~/actions';
 import {ROUTES} from '~/routes';
 
 const alphabetMap = [
@@ -12,7 +19,7 @@ const alphabetMap = [
 ];
 
 const createAlphabetState = alphabet =>
-    alphabet.map(letter => ({ active: false, letter }));
+    alphabet.map(letter => ({active: false, letter}));
 
 const initialAlphabet = createAlphabetState(alphabetMap);
 
@@ -53,12 +60,12 @@ const letters = (state = {}, {type, payload}) => {
     switch (type) {
         case SET_LETTER:
             const letter = {
-                [payload.letter.letter]: payload.letter.positions
+                [payload.letter.letter]: payload.letter.positions,
             };
 
             return {
                 ...state,
-                ...letter
+                ...letter,
             };
         default:
             return state;

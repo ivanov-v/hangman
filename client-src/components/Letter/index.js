@@ -22,18 +22,18 @@ const Button = styled.button`
     font-size: 15px;
     text-transform: uppercase;
     transition: box-shadow 0.2s;
-    
+
     &:disabled {
         opacity: 0.3;
     }
-    
+
     &:not(:disabled) {
         cursor: pointer;
     }
-    
+
     &:not(:disabled):active {
         box-shadow: inset 0 -1px;
-        
+
         ${Inner} {
             transform: translateY(4px);
         }
@@ -51,13 +51,11 @@ export class Letter extends React.Component {
         return (
             <Button
                 className={isActive ? 'active' : ''}
-                type='button'
+                type="button"
                 onClick={onClick}
                 disabled={isActive}
             >
-                <Inner>
-                    {children}
-                </Inner>
+                <Inner>{children}</Inner>
             </Button>
         );
     }

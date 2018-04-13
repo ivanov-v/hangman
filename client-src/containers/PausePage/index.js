@@ -13,7 +13,7 @@ const mapDispatchToProps = dispatch => ({
 
     onHome() {
         dispatch(changePage(ROUTES.HOME));
-    }
+    },
 });
 
 export const PausePage = connect(null, mapDispatchToProps)(PausePageRaw);

@@ -7,8 +7,12 @@ export class PausePageRaw extends React.Component {
 
         return (
             <div>
-                <button type='button' onClick={onPlay}>Продолжить игру</button>
-                <button type='button' onClick={onHome}>Перейти на домашний экран</button>
+                <button type="button" onClick={onPlay}>
+                    Продолжить игру
+                </button>
+                <button type="button" onClick={onHome}>
+                    Перейти на домашний экран
+                </button>
             </div>
         );
     }

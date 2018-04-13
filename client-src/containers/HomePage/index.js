@@ -9,7 +9,7 @@ import {HomePageRaw} from '~/components/HomePageRaw';
 const mapDispatchToProps = dispatch => ({
     onPlay() {
         dispatch(changePage(ROUTES.GAME));
-    }
+    },
 });
 
 export const HomePage = connect(null, mapDispatchToProps)(HomePageRaw);

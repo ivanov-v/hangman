@@ -3,10 +3,7 @@ import {connect} from 'react-redux';
 
 import {checkAndUpdateAnswer} from '~/actions';
 import {Alphabet} from '~/components/Alphabet';
-import {
-    getAlphabet,
-    getIssueId,
-} from '~/selectors';
+import {getAlphabet, getIssueId} from '~/selectors';
 
 const mapStateToProps = state => {
     return {
@@ -16,7 +13,9 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = dispatch => ({
-    onClick: data => dispatch(checkAndUpdateAnswer(data))
+    onClick: data => dispatch(checkAndUpdateAnswer(data)),
 });
 
-export const AlphabetContainer = connect(mapStateToProps, mapDispatchToProps)(Alphabet);
+export const AlphabetContainer = connect(mapStateToProps, mapDispatchToProps)(
+    Alphabet
+);

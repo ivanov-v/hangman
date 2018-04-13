@@ -4,19 +4,19 @@ module.exports = {
     entry: ['./client-src/index.js'],
     output: {
         path: resolve(__dirname, 'dist'),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
     },
     resolve: {
         alias: {
             '~': resolve(__dirname, './client-src'),
-        }
+        },
     },
     module: {
         rules: [
             {
                 test: /\.js$/,
-                use: 'babel-loader'
-            }
-        ]
-    }
+                use: 'babel-loader',
+            },
+        ],
+    },
 };

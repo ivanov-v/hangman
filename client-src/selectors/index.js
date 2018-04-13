@@ -16,7 +16,7 @@ export const getLetter = (state, index) => {
     const lettersKeys = Object.keys(letters);
     let findLetter;
 
-    lettersKeys.forEach((letter) => {
+    lettersKeys.forEach(letter => {
         const pos = letters[letter].find(pos => pos === index);
 
         if (pos !== undefined) {

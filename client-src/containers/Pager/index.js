@@ -15,8 +15,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     onClick() {
-        dispatch(changePage(ROUTES.GAME))
-    }
+        dispatch(changePage(ROUTES.GAME));
+    },
 });
 
 class PagerRaw extends React.Component {

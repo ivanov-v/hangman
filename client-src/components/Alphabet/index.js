@@ -30,17 +30,14 @@ export class Alphabet extends React.PureComponent {
 
         onClick({
             letter,
-            issueId
+            issueId,
         });
     };
 
     renderLetter = ({letter, active}) => {
         return (
             <Item key={letter}>
-                <Letter
-                    isActive={active}
-                    onClick={this.handleClick(letter)}
-                >
+                <Letter isActive={active} onClick={this.handleClick(letter)}>
                     {letter}
                 </Letter>
             </Item>
@@ -48,9 +45,7 @@ export class Alphabet extends React.PureComponent {
     };
 
     render() {
-        const {
-            alphabet,
-        } = this.props;
+        const {alphabet} = this.props;
 
         return <List>{alphabet.map(this.renderLetter)}</List>;
     }
