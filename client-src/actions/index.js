@@ -1,8 +1,5 @@
 import axios from 'axios';
-import {
-    isWin,
-    isGameOver,
-} from '~/selectors';
+import {isWin, isGameOver} from '~/selectors';
 
 export const CHECK_LETTER = 'CHECK_LETTER';
 export const RESET_STATE = 'RESET_STATE';
@@ -14,41 +11,42 @@ export const DIE = 'DIE';
 export const checkLetter = letter => ({
     type: CHECK_LETTER,
     payload: {
-        letter
-    }
+        letter,
+    },
 });
 
 export const setIssue = issue => ({
     type: SET_ISSUE,
     payload: {
-        issue
-    }
+        issue,
+    },
 });
 
 export const die = () => ({
-    type: DIE
+    type: DIE,
 });
 
 export const setLetter = letter => ({
     type: SET_LETTER,
     payload: {
-        letter
-    }
+        letter,
+    },
 });
 
 export const resetState = () => ({
-    type: RESET_STATE
+    type: RESET_STATE,
 });
 
 export const changePage = pageId => ({
     type: CHANGE_PAGE,
     payload: {
-        pageId
-    }
+        pageId,
+    },
 });
 
 export const getInitialIssue = () => dispatch => {
-    return axios.get('http://localhost:3000/api/issue')
+    return axios
+        .get('http://localhost:3000/api/issue')
         .then(response => response.data.randomIssue)
         .then(randomIssue => {
             dispatch(setIssue(randomIssue.issue));
@@ -66,7 +64,8 @@ export const newGame = () => dispatch => {
 export const checkAndUpdateAnswer = ({issueId, letter}) => (dispatch, getState) => {
     dispatch(checkLetter(letter));
 
-    return axios.get(`http://localhost:3000/api/letters?issueId=${issueId}&letter=${letter}`)
+    return axios
+        .get(`http://localhost:3000/api/letters?issueId=${issueId}&letter=${letter}`)
         .then(response => response.data)
         .then(letterState => {
             if (letterState.positions.length === 0) {
@@ -87,4 +86,3 @@ export const checkAndUpdateAnswer = ({issueId, letter}) => (dispatch, getState) 
             console.log(error);
         });
 };
-
