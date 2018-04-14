@@ -23,12 +23,24 @@ const createAlphabetState = alphabet => alphabet.map(letter => ({active: false, 
 
 const initialAlphabet = createAlphabetState(alphabetMap);
 
-const alphabet = (state = initialAlphabet, {type, payload}) => {
+const letter = (state = {}, {type}) => {
     switch (type) {
         case CHECK_LETTER:
+            return {
+                ...state,
+                active: true
+            };
+        default:
+            return state;
+    }
+};
+
+const alphabet = (state = initialAlphabet, action) => {
+    switch (action.type) {
+        case CHECK_LETTER:
             return state.map(letterState => {
-                if (letterState.letter === payload.letter) {
-                    return Object.assign({}, letterState, {active: true});
+                if (letterState.letter === action.payload.letter) {
+                    return letter(letterState, action);
                 }
 
                 return letterState;
