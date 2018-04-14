@@ -2,47 +2,45 @@ const issues = [
     {
         id: 1,
         issue: 'еда',
-        answer: 'яблоко'
+        answer: 'яблоко',
     },
     {
         id: 2,
         issue: 'спорт',
-        answer: 'футбол'
+        answer: 'футбол',
     },
     {
         id: 3,
         issue: 'животные',
-        answer: 'капибара'
+        answer: 'капибара',
     },
     {
         id: 4,
         issue: 'животные',
-        answer: 'кошка'
+        answer: 'кошка',
     },
     {
         id: 5,
         issue: 'животные',
-        answer: 'гамадрил'
+        answer: 'гамадрил',
     },
     {
         id: 6,
         issue: 'животные',
-        answer: 'сколопендра'
-    }
+        answer: 'сколопендра',
+    },
 ];
 
 const getLettersPosition = (issueId, acceptedLetter) => {
     const issue = issues.find(issue => issue.id === issueId);
 
-    return issue.answer
-        .split('')
-        .reduce((acc, letter, index) => {
-            if (acceptedLetter === letter) {
-                acc.push(index);
-            }
+    return issue.answer.split('').reduce((acc, letter, index) => {
+        if (acceptedLetter === letter) {
+            acc.push(index);
+        }
 
-            return acc;
-        }, []);
+        return acc;
+    }, []);
 };
 
 const getRandomIssue = () => {
@@ -54,21 +52,21 @@ const getRandomIssue = () => {
     const letterPositions = getLettersPosition(randomIssue.id, answerFirstLetter);
     const letter = {
         letter: answerFirstLetter,
-        positions: letterPositions
+        positions: letterPositions,
     };
     const issue = {
         issueId: randomIssue.id,
         text: randomIssue.issue,
-        answerLength
+        answerLength,
     };
 
     return {
         issue,
-        letter
+        letter,
     };
 };
 
 module.exports = {
     getRandomIssue,
-    getLettersPosition
+    getLettersPosition,
 };

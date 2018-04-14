@@ -5,7 +5,10 @@ const app = express();
 
 app.use((req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
-    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    res.header(
+        'Access-Control-Allow-Headers',
+        'Origin, X-Requested-With, Content-Type, Accept'
+    );
     next();
 });
 
@@ -13,7 +16,7 @@ app.get('/api/issue', (req, res) => {
     const randomIssue = issues.getRandomIssue();
 
     res.json({
-        randomIssue
+        randomIssue,
     });
 });
 
@@ -24,7 +27,7 @@ app.get('/api/letters', (req, res) => {
 
     res.json({
         letter,
-        positions
+        positions,
     });
 });
 
