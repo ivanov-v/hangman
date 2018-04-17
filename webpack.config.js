@@ -1,4 +1,4 @@
-const {resolve} = require('path');
+const {resolve, join} = require('path');
 
 module.exports = {
     mode: 'development',
@@ -20,4 +20,11 @@ module.exports = {
             },
         ],
     },
+    devServer: {
+        contentBase: join(__dirname, 'public'),
+        port: 9000,
+        inline: true,
+        hot: true,
+        stats: 'errors-only',
+    }
 };

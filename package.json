@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start-server": "nodemon app/index",
-    "start": "webpack-dev-server & webpack --watch",
+    "start": "webpack-dev-server",
     "build": "webpack -p"
   },
   "author": "ivanov-v",
