@@ -1,4 +1,5 @@
 const {resolve, join} = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -20,11 +21,18 @@ module.exports = {
             },
         ],
     },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'Hangman',
+            template: './client-src/index.html',
+            files: {
+                css: ['styles.css'],
+            },
+        }),
+    ],
     devServer: {
-        contentBase: join(__dirname, 'public'),
+        contentBase: join(__dirname, 'dist'),
         port: 9000,
-        inline: true,
-        hot: true,
         stats: 'errors-only',
-    }
+    },
 };
