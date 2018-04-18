@@ -1,3 +1,18 @@
+const categories = [
+    {
+        id: 1,
+        value: 'еда',
+    },
+    {
+        id: 2,
+        value: 'спорт',
+    },
+    {
+        id: 3,
+        value: 'животные',
+    },
+];
+
 const issues = [
     {
         id: 1,

@@ -32,7 +32,7 @@ module.exports = {
         }),
         new CopyWebpackPlugin([
             {from: './client-src/styles.css', to: 'styles'},
-            {from: './client-src/fonts', to: 'fonts'}
+            {from: './client-src/fonts', to: 'fonts'},
         ]),
     ],
     devServer: {
