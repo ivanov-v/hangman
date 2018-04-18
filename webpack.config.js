@@ -1,5 +1,6 @@
 const {resolve, join} = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: 'development',
@@ -26,9 +27,13 @@ module.exports = {
             title: 'Hangman',
             template: './client-src/index.html',
             files: {
-                css: ['styles.css'],
+                css: ['./styles/styles.css'],
             },
         }),
+        new CopyWebpackPlugin([
+            {from: './client-src/styles.css', to: 'styles'},
+            {from: './client-src/fonts', to: 'fonts'}
+        ]),
     ],
     devServer: {
         contentBase: join(__dirname, 'dist'),
