@@ -6,6 +6,8 @@ import {Pager} from '~/containers/Pager';
 const Inner = styled.div`
     display: block;
     padding: 20px;
+    margin: 0 auto;
+    max-width: 705px;
 `;
 
 export class App extends React.PureComponent {

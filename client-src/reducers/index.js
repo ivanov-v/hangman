@@ -6,6 +6,8 @@ import {
     SET_LETTER,
     RESET_STATE,
     CHANGE_PAGE,
+    ADD_COINS,
+    RESET_COINS,
 } from '~/actions';
 import {ROUTES} from '~/routes';
 
@@ -28,7 +30,7 @@ const letter = (state = {}, {type}) => {
         case CHECK_LETTER:
             return {
                 ...state,
-                active: true
+                active: true,
             };
         default:
             return state;
@@ -92,12 +94,24 @@ const route = (state = ROUTES.HOME, {type, payload}) => {
     return state;
 };
 
+const coins = (state = 0, {type, payload}) => {
+    switch (type) {
+        case ADD_COINS:
+            return state + payload;
+        case RESET_COINS:
+            return 0;
+        default:
+            return state;
+    }
+};
+
 export const reducer = combineReducers({
     alphabet,
     lives,
     issue,
     letters,
     route,
+    coins,
 });
 
 export const rootReducer = (state, action) => {

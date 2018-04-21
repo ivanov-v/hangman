@@ -6,6 +6,8 @@ export const RESET_STATE = 'RESET_STATE';
 export const SET_LETTER = 'SET_LETTER';
 export const SET_ISSUE = 'SET_ISSUE';
 export const CHANGE_PAGE = 'CHANGE_PAGE';
+export const ADD_COINS = 'ADD_COINS';
+export const RESET_COINS = 'RESET_COINS';
 export const DIE = 'DIE';
 
 export const checkLetter = letter => ({
@@ -24,6 +26,11 @@ export const setIssue = issue => ({
 
 export const die = () => ({
     type: DIE,
+});
+
+export const addCoins = coins => ({
+    type: ADD_COINS,
+    payload: coins,
 });
 
 export const setLetter = letter => ({

@@ -37,3 +37,4 @@ export const getLives = state => state.lives;
 export const getAlphabet = state => state.alphabet;
 export const getIssueId = state => state.issue.issueId;
 export const getRoute = state => state.route;
+export const getCoins = state => state.coins;

@@ -17,6 +17,13 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.svg$/,
+                use: [
+                    'desvg-loader/react',
+                    'svg-loader',
+                ],
+            },
+            {
                 test: /\.js$/,
                 use: 'babel-loader',
             },
