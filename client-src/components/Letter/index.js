@@ -17,7 +17,7 @@ const Button = styled.button`
     appearance: none;
     box-shadow: inset 0 -3px #000;
     background-color: #fff;
-    font-family: 'Stem';
+    font-family: 'Neucha';
     font-weight: 700;
     font-size: 15px;
     text-transform: uppercase;
