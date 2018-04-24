@@ -1,14 +1,7 @@
 @font-face {
-    font-family: 'Stem';
-    src: url('../fonts/STM55.woff') format('woff');
+    font-family: 'Neucha';
+    src: url('../fonts/neucha.woff2') format('woff2');
     font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Stem';
-    src: url('../fonts/STM75.woff') format('woff');
-    font-weight: 700;
     font-style: normal;
 }
 
@@ -23,7 +16,7 @@ html {
 }
 
 body {
-    font-family: Stem, Arial, sans-serif;
+    font-family: Neucha, Arial, sans-serif;
     font-size: 13px;
     line-height: 1.4;
     margin: 0;
