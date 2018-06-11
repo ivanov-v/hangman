@@ -16,4 +16,7 @@ const mapDispatchToProps = dispatch => ({
     onClick: data => dispatch(checkAndUpdateAnswer(data)),
 });
 
-export const AlphabetContainer = connect(mapStateToProps, mapDispatchToProps)(Alphabet);
+export const AlphabetContainer = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Alphabet);

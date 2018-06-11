@@ -16,4 +16,7 @@ const mapDispatchToProps = dispatch => ({
     onClick: () => dispatch(changePage(ROUTES.PAUSE)),
 });
 
-export const Header = connect(mapStateToProps, mapDispatchToProps)(HeaderRaw);
+export const Header = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(HeaderRaw);

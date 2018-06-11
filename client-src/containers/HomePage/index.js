@@ -12,4 +12,7 @@ const mapDispatchToProps = dispatch => ({
     },
 });
 
-export const HomePage = connect(null, mapDispatchToProps)(HomePageRaw);
+export const HomePage = connect(
+    null,
+    mapDispatchToProps
+)(HomePageRaw);

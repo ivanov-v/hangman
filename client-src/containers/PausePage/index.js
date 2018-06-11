@@ -16,4 +16,7 @@ const mapDispatchToProps = dispatch => ({
     },
 });
 
-export const PausePage = connect(null, mapDispatchToProps)(PausePageRaw);
+export const PausePage = connect(
+    null,
+    mapDispatchToProps
+)(PausePageRaw);
