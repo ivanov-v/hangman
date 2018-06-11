@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {isWin, isGameOver} from '~/selectors';
+import {isWin, isGameOver} from '@/selectors';
 
 export const CHECK_LETTER = 'CHECK_LETTER';
 export const RESET_STATE = 'RESET_STATE';

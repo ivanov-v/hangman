@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {checkAndUpdateAnswer} from '~/actions';
-import {Alphabet} from '~/components/Alphabet';
-import {getAlphabet, getIssueId} from '~/selectors';
+import {checkAndUpdateAnswer} from '@/actions';
+import {Alphabet} from '@/components/Alphabet';
+import {getAlphabet, getIssueId} from '@/selectors';
 
 const mapStateToProps = state => {
     return {

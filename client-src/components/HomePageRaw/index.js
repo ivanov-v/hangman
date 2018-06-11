@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Category} from '~/components/Category';
+import {Category} from '@/components/Category';
 
 export class HomePageRaw extends React.Component {
     render() {

@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-import FoodIcon from '~/icons/food.svg';
-import AnimalsIcon from '~/icons/animals.svg';
-import SportIcon from '~/icons/sport.svg';
-import LockIcon from '~/icons/lock.svg';
-import PlayIcon from '~/icons/play.svg';
-import CoinsIcon from '~/icons/coins.svg';
+import FoodIcon from '@/icons/food.svg';
+import AnimalsIcon from '@/icons/animals.svg';
+import SportIcon from '@/icons/sport.svg';
+import LockIcon from '@/icons/lock.svg';
+import PlayIcon from '@/icons/play.svg';
+import CoinsIcon from '@/icons/coins.svg';
 
 const ICONS = {
     food: <FoodIcon />,
@@ -52,7 +52,7 @@ const Coins = styled.div`
     align-items: center;
     position: absolute;
     top: 13px;
-    left: 235px;
+    right: 60px;
     font-size: 17px;
 `;
 

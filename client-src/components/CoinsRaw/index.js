@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
-import CoinsIcon from '~/icons/coins.svg';
+import CoinsIcon from '@/icons/coins.svg';
 
 const Root = styled.div`
     display: flex;

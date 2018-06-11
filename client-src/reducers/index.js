@@ -8,8 +8,8 @@ import {
     CHANGE_PAGE,
     ADD_COINS,
     RESET_COINS,
-} from '~/actions';
-import {ROUTES} from '~/routes';
+} from '@/actions';
+import {ROUTES} from '@/routes';
 
 // prettier-ignore
 const alphabetMap = [

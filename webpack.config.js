@@ -11,7 +11,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-            '~': resolve(__dirname, './client-src'),
+            '@': resolve(__dirname, './client-src'),
         },
     },
     module: {
